@@ -22,11 +22,12 @@ with open ('/var/log/nginx/access.log', 'r') as f:
     for ip in list_ip:
         counter = Counter(list_ip)
         ip_count = counter[ip]
+        counter.most_common()
         save_ip(ip, ip_count)
     
     
 
-    
+
         
         
 
