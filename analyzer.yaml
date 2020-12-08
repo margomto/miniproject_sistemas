@@ -1,0 +1,27 @@
+- hosts: all
+  tasks:
+  - name: Install nginx
+    apt:
+      name: nginx
+      state: latest
+      update_cache: yes
+  - name: Start nginx
+    service: 
+      name: nginx
+      state: started
+      enabled: yes
+  - name: Install git
+    apt: 
+      name: git
+      state: latest
+      update_cache: yes
+  - name: Create a directory if it does not exist
+    file:
+      path: /home/mgomez/loganalyzer
+      state: directory    
+      mode: 0755 
+  - name: Clone repository
+    git: 
+      repo: https://github.com/margomto/miniproject_sistemas.git
+      dest: /home/mgomez/loganalyzer
+      clone: yes    

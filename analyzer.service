@@ -1,0 +1,10 @@
+[Unit]
+Description=Register ip addresses for log file from nginx
+After=network.target nss-lookup.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3  /home/mgomez/loganalyzer/analyzer.py
+
+[Install]
+WantedBy=multi-user.target
