@@ -25,3 +25,10 @@
       repo: https://github.com/margomto/miniproject_sistemas.git
       dest: /home/mgomez/loganalyzer
       clone: yes    
+  - name: Run analyzer
+    service: 
+      name: analyzer.service
+      state: started
+      enabled: yes
+
+      
