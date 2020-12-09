@@ -24,13 +24,18 @@
     git: 
       repo: https://github.com/margomto/miniproject_sistemas.git
       dest: /home/mgomez/loganalyzer
-      clone: yes    
+      clone: yes 
+  - name: Copy service in systemd
+    copy:
+      remote_src: /home/mgomez/loganalyzer/analyzer.service
+      dest: /lib/systemd/system/
+      mode: '0644'       
   - name: Run analyzer
     systemd:
       state: started
       daemon_reload: yes
       name: analyzer
-      
+
 
       
 
