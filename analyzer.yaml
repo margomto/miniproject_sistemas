@@ -27,8 +27,9 @@
       clone: yes 
   - name: Copy service in systemd
     copy:
-      remote_src: /home/mgomez/loganalyzer/analyzer.service
+      src: /home/mgomez/loganalyzer/analyzer.service
       dest: /lib/systemd/system/
+      remote_src: yes
       mode: '0644'       
   - name: Run analyzer
     systemd:
