@@ -1,5 +1,0 @@
-[web]
-35.240.23.207
-
-[web:vars]
-ansible_python_interpeter=usr/bin/python3

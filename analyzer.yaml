@@ -26,10 +26,13 @@
       dest: /home/mgomez/loganalyzer
       clone: yes    
   - name: Run analyzer
-    service: 
-      name: analyzer.service
+    systemd:
       state: started
-      enabled: yes
+      daemon_reload: yes
+      name: analyzer
+      
 
       
+
+
 
