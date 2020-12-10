@@ -2,7 +2,8 @@
 Description=Run analyzer.py every half an hour
 
 [Timer]
-OnUnitActiveSec=1min
+OnCalendar=*:*:0,30
+Persistent=True
 
 [Install]
 WantedBy=timers.target
