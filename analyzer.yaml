@@ -36,6 +36,17 @@
       state: started
       daemon_reload: yes
       name: analyzer
+  - name: Copy timer in systemd
+    copy:
+      src: /home/mgomez/loganalyzer/analyzer.timer
+      dest: /lib/systemd/system/
+      remote_src: yes
+      mode: '0644'
+  - name: Enable a timer for analyzer
+    systemd:
+      name: analyzer.timer
+      state: started
+      enabled: yes               
 
 
       
