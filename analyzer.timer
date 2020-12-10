@@ -2,7 +2,7 @@
 Description=Run analyzer.py every half an hour
 
 [Timer]
-OnCalendar=*:0,30
+OnCalendar=*:0/30
 Persistent=True
 
 [Install]
